@@ -1,7 +1,7 @@
 version: "2"
 services:
   overworld:
-    image: dstacademy/dontstarvetogether
+    image: index.tenxcloud.com/roubao/dontstarvetogether:0.7.1
     container_name: overworld
     hostname: overworld
     tty: true
@@ -11,9 +11,9 @@ services:
     ports:
       - "10999:10999/udp"
     volumes:
-      - ./world:/var/lib/dsta/cluster
+      - /data/world:/var/lib/dsta/cluster
   underworld:
-    image: dstacademy/dontstarvetogether
+    image: index.tenxcloud.com/roubao/dontstarvetogether:0.7.1
     container_name: underworld
     hostname: underworld
     tty: true
@@ -25,4 +25,4 @@ services:
     links:
       - overworld
     volumes:
-      - ./world:/var/lib/dsta/cluster
+      - /data/world:/var/lib/dsta/cluster
