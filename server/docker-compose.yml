@@ -8,6 +8,7 @@ services:
     stdin_open: true
     command: dst-server start --update=all
     env_file: overworld.env
+    network_mode: "bridge"
     ports:
       - "10999:10999/udp"
     volumes:
@@ -20,6 +21,7 @@ services:
     stdin_open: true
     command: dst-server start --update=all
     env_file: underworld.env
+    network_mode: "bridge"
     ports:
       - "11000:11000/udp"
     links:
